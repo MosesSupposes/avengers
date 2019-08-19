@@ -29,8 +29,15 @@ export default class App extends Component {
           </li>
         </ul>
         <Route exact path="/" component={Home} />
-        <Route exact path="/avengers" component={AvengersList} />
-        <Route path="/avengers/:id" component={AvengerPage} />
+        <Route 
+          exact 
+          path="/avengers" 
+          render={props => <AvengersList {...props} avengers={this.state.avengers} />} 
+        />
+        <Route 
+          path="/avengers/:id" 
+          render={props => <AvengerPage {...props} avengers={this.state.avengers} />} 
+        />
       </div>
     )
   }

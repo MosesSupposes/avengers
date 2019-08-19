@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import avengers from '../data'
 
-export default function AvengersList() {
+export default function AvengersList(props) {
     return (
         <div className="characters-list-wrapper">
-            {avengers.map(function renderAvengers(avenger) {
+            {props.avengers.map(function renderAvengers(avenger) {
                 return (
                     <div className="character-card" key={avenger.id}>
                         <img src={avenger.thumbnail}  alt={avenger.name}/>
